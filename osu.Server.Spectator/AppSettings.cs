@@ -24,6 +24,12 @@ namespace osu.Server.Spectator
 
         #endregion
 
+        #region For use with ReplayServerScoreStorage
+
+        public static string ReplayServerDomain { get; }
+
+        #endregion
+
         public static bool TrackBuildUserCounts { get; set; }
 
         public static string ServerPort { get; set; }
@@ -53,6 +59,8 @@ namespace osu.Server.Spectator
             DatabaseHost = Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost";
             DatabaseUser = Environment.GetEnvironmentVariable("DB_USER") ?? "osuweb";
             DatabasePort = Environment.GetEnvironmentVariable("DB_PORT") ?? "3306";
+
+            ReplayServerDomain = Environment.GetEnvironmentVariable("REPLAY_SERVER_DOMAIN") ?? string.Empty;
         }
     }
 }
